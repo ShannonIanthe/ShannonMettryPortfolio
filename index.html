@@ -11,13 +11,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #0B0C10;
-      --text: #EDEFF5;
-      --muted: rgba(237,239,245,0.65);
-      --accent: #7C5CFF;
-      --border: rgba(255,255,255,0.08);
-    }
+:root {
+  --bg: #0B0C10;
+  --surface: rgba(255,255,255,0.03);
+  --surface-2: rgba(255,255,255,0.05);
+  --text: #EDEFF5;
+  --muted: rgba(237,239,245,0.65);
+  --accent: #7C5CFF;
+  --border: rgba(255,255,255,0.08);
+}
 
     * { margin:0; padding:0; box-sizing:border-box; }
 
@@ -78,22 +80,50 @@
     }
 
     section {
-      padding: 80px 0;
-      border-top: 1px solid var(--border);
+      padding: 90px 0;
+      position: relative;
     }
+    .section-card {
+    background: linear-gradient(
+    180deg,
+    var(--surface),
+    rgba(255,255,255,0.01)
+  );
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 48px;
+    margin-top: 32px;
+    backdrop-filter: blur(10px);
+  }
 
     h2 {
-      font-size: 12px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+h2::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.6;
+}
 
     /* Case Studies */
-    .case {
-      margin-bottom: 56px;
-    }
+   .case {
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+  .case:last-child {
+      border-bottom: none;
+}
 
     .title {
       font-size: 20px;
@@ -149,7 +179,7 @@
   <nav>
     <div>Shannon Mettry</div>
     <div>
-  <a href="#work">Work</a> ·
+  <a href="#work">Experience</a> ·
   <a href="#philosophy">Thinking</a> ·
   <a href="#writing">Writing</a> ·
   <a href="#contact">Contact</a>
@@ -169,7 +199,7 @@
   </h1>
 
   <p class="sub">
-    I build and maintain integration workflows across marketing and messaging systems, focusing on data transformation, reliability, and developer experience in real-world API environments.
+    I build and maintain integration workflows across real-time communication platforms - marketing automation, messaging APIs, and developer tooling - focusing on data transformation, reliability, and developer experience.
   </p>
 
   <p class="sub">
@@ -178,45 +208,7 @@
 
 </header>
 
-  <!-- CASE STUDY -->
-  <section id="work">
-    <h2>Selected Case Study</h2>
-
-    <div class="case">
-      <div class="title">Jira → Adobe Campaign Automation System</div>
-      <div class="meta">VML MAP · Integration Platform Engineering</div>
-
-      <div class="block">
-        <div class="label">Problem</div>
-        <div class="text">
-          Manual campaign task creation across Jira and Adobe Campaign caused delays and inconsistencies in execution workflows.
-        </div>
-      </div>
-
-      <div class="block">
-        <div class="label">Approach</div>
-        <div class="text">
-          Built an API-driven automation layer using JavaScript middleware integrating Jira workflows with Adobe Campaign APIs, standardising data mapping across REST systems.
-        </div>
-      </div>
-
-      <div class="block">
-        <div class="label">Tradeoffs</div>
-        <div class="text">
-          Prioritised reliability over real-time sync due to enterprise API constraints.
-        </div>
-      </div>
-
-      <div class="block">
-        <div class="label">Impact</div>
-        <div class="text">
-          Removed manual operational steps and improved consistency across support and campaign execution workflows.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
+   <!-- EXPERIENCE -->
   <section>
     <h2>Experience</h2>
 
@@ -261,6 +253,68 @@
     </div>
 
   </section>
+
+  <!-- CASE STUDY -->
+  <section id="work">
+    <h2>Selected Case Study</h2>
+
+    <div class="case">
+      <div class="title">Jira → Adobe Campaign Automation System</div>
+      <div class="meta">VML MAP · Integration Platform Engineering</div>
+
+      <div class="block">
+        <div class="label">Problem</div>
+        <div class="text">
+          Manual campaign task creation across Jira and Adobe Campaign caused delays and inconsistencies in execution workflows.
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="label">Approach</div>
+        <div class="text">
+          Built an API-driven automation layer using JavaScript middleware integrating Jira workflows with Adobe Campaign APIs, standardising data mapping across REST systems.
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="label">Tradeoffs</div>
+        <div class="text">
+          Prioritised reliability over real-time sync due to enterprise API constraints.
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="label">Impact</div>
+        <div class="text">
+          Removed manual operational steps and improved consistency across support and campaign execution workflows.
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- WRITING  -->
+  <section id="writing">
+  <h2>Technical Writing</h2>
+
+  <div class="case">
+    <div class="block">
+      <div class="text">
+        I write technical deep-dives on API integration patterns, 
+        developer experience, and real-time communication systems.
+      </div>
+    </div>
+
+    <div class="block">
+      <a href="https://dev.to/shannonianthe/[your-whatsapp-post-url]" target="_blank">
+        <div class="pill">WhatsApp Template API Deep-Dive (1,500 words)</div>
+      </a>
+      [After you write it:]
+      <a href="[your-webrtc-post-url]" target="_blank">
+        <div class="pill">From Messaging APIs to WebRTC (Coming Soon)</div>
+      </a>
+    </div>
+  </div>
+</section>
 
   <!-- THINKING -->
   <section id="philosophy">
