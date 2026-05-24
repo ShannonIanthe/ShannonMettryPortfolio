@@ -37,6 +37,14 @@
       margin: 0 auto;
       padding: 0 24px;
     }
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
 
      {
       display:flex;
@@ -49,7 +57,7 @@
      a:hover { color: var(--text); }
 
     .hero {
-      padding: 120px 0 80px;
+    padding: 100px 0 80px;
     }
 
     .kicker {
@@ -77,6 +85,10 @@
       max-width: 760px;
       color: var(--muted);
       font-size: 16px;
+    }
+
+    section {
+    scroll-margin-top: 80px;
     }
 
     section {
@@ -185,7 +197,7 @@ h2::before {
       <a href="#experience">Experience</a> ·
       <a href="#case-study">Case Study</a> ·
       <a href="#writing">Writing</a> ·
-      <a href="#philosophy">Thinking</a> ·
+      <a href="#philosophy">Philosophy</a> ·
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -195,7 +207,7 @@ h2::before {
 
 
 <!-- HERO -->
-<header class="hero">
+<header class="hero container">
 
   <div class="kicker">
     Developer Advocate • Integration Engineer • API Systems
